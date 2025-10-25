@@ -2,131 +2,210 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierLecteurController">
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #F8FAFC;" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierLecteurController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0">
+      <!-- SIDEBAR -->
+      <AnchorPane prefHeight="720.0" prefWidth="280.0" styleClass="sidebar-nav">
          <children>
-            <AnchorPane layoutX="10.0" prefHeight="616.0" prefWidth="907.0">
+            <!-- Logo Container -->
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="240.0" styleClass="library-logo-container">
                <children>
-                  <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="596.0" prefWidth="897.0" style="-fx-background-color: white;">
+                  <Label styleClass="library-logo-text" text="eBiblio" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#64748B" text="Gestion de bibliothèque" />
+               </children>
+            </VBox>
+            
+            <!-- Navigation Menu -->
+            <VBox layoutX="20.0" layoutY="130.0" prefWidth="240.0" spacing="10.0">
+               <children>
+                  <!-- Accueil Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
                      <children>
-                        <AnchorPane layoutX="-31.0" layoutY="-24.0" prefHeight="630.0" prefWidth="279.0" style="-fx-background-color: #05187B;">
-                           <children>
-                              <TextArea layoutX="14.0" layoutY="23.0" prefHeight="72.0" prefWidth="215.0" style="-fx-background-color: white;" styleClass="text-align : center" text="YourLibrary" wrapText="true">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </TextArea>
-                              <Label contentDisplay="CENTER" layoutX="21.0" layoutY="32.0" prefHeight="55.0" prefWidth="202.0" style="-fx-background-color: white; -fx-border-radius: 5px;" text="YourLibrary" textAlignment="CENTER" textFill="#1000bf">
-                                 <font>
-                                    <Font size="33.0" />
-                                 </font>
-                              </Label>
-                              <ButtonBar layoutX="76.0" layoutY="124.0" prefHeight="56.0" prefWidth="125.0" style="-fx-background-color: none;">
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 <buttons>
-                                    <Button fx:id="page_accueil" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="56.0" prefWidth="118.0" style="-fx-background-color: none;" text="Accueil" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font size="22.0" />
-                                       </font>
-                                    </Button>
-                                 </buttons>
-                              </ButtonBar>
-                              <ButtonBar layoutX="78.0" layoutY="180.0" prefHeight="56.0" prefWidth="125.0">
-                                 <buttons>
-                                    <Button fx:id="page_livres" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="56.0" prefWidth="125.0" style="-fx-background-color: none;" text="Livres" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font size="26.0" />
-                                       </font>
-                                    </Button>
-                                 </buttons>
-                              </ButtonBar>
-                              <ButtonBar layoutX="78.0" layoutY="256.0" prefHeight="51.0" prefWidth="125.0">
-                                 <buttons>
-                                    <Button fx:id="page_lecteurs" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="57.0" prefWidth="136.0" style="-fx-background-color: none;" text="Lecteurs" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font size="21.0" />
-                                       </font>
-                                    </Button>
-                                 </buttons>
-                              </ButtonBar>
-                              <ButtonBar layoutX="93.0" layoutY="367.0" prefHeight="40.0" prefWidth="125.0" />
-                              <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="23.0" layoutY="191.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/book.PNG" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="23.0" layoutY="257.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/lecteur.PNG" />
-                                 </image>
-                              </ImageView>
-                              <Button fx:id="page_emprunts" contentDisplay="CENTER" layoutX="85.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="56.0" prefWidth="142.0" style="-fx-background-color: none;" text="Emprunts" textAlignment="CENTER" textFill="WHITE">
-                                 <font>
-                                    <Font size="23.0" />
-                                 </font>
-                              </Button>
-                              <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="23.0" layoutY="332.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/categorie.PNG" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="40.0" fitWidth="47.0" layoutX="26.0" layoutY="135.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/Capture%20d'écran%202024-01-16%20225352.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                        <Text fill="#12059e" layoutX="257.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier Lecteur" textAlignment="CENTER" wrappingWidth="347.00000017881393">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/accueil.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_accueil" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Accueil" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Livres Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/book.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_livres" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Livres" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Lecteurs Button (Active) -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button, nav-button-active">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/lecteur.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_lecteurs" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Lecteurs" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Emprunts Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/emprunt.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_emprunts" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Emprunts" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Footer Info -->
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="630.0" prefWidth="240.0" spacing="5.0">
+               <children>
+                  <Text fill="rgba(255,255,255,0.6)" text="Version 1.0.0" />
+                  <Text fill="rgba(255,255,255,0.6)" text="© 2024 YourLibrary" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      
+      <!-- MAIN CONTENT AREA -->
+      <AnchorPane layoutX="280.0" prefHeight="720.0" prefWidth="920.0">
+         <children>
+            <!-- Header -->
+            <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="30.0" spacing="5.0">
+               <children>
+                  <Text fill="#1E293B" text="Modifier Lecteur">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#64748B" text="Modifiez les informations du lecteur">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            
+            <!-- Modification Form -->
+            <VBox alignment="CENTER" layoutX="160.0" layoutY="180.0" prefWidth="600.0" spacing="20.0" styleClass="form-container">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/lecteur.PNG" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#1E293B" text="Informations du lecteur">
                            <font>
-                              <Font size="41.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
-                        <VBox layoutX="286.0" layoutY="172.0" prefHeight="188.0" prefWidth="569.0" style="-fx-background-color: #CBD6E2; -fx-border-radius: 10px;">
+                     </children>
+                  </HBox>
+                  
+                  <!-- Form Fields -->
+                  <VBox spacing="15.0">
+                     <children>
+                        <VBox spacing="8.0">
                            <children>
-                              <TextField fx:id="input_nom" promptText="Nom">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </TextField>
-                              <TextField fx:id="input_prenom" promptText="Prenom">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </TextField>
-                              <TextField fx:id="input_age" promptText="Age">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </TextField>
-                              <Button fx:id="modifier_lecteur" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#modifierLecteur" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #05187B;" text="Modifier" textFill="WHITE">
+                              <Label text="Nom" textFill="#64748B">
                                  <font>
-                                    <Font size="17.0" />
+                                    <Font name="System Bold" size="13.0" />
                                  </font>
-                                 <VBox.margin>
-                                    <Insets left="450.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
+                              </Label>
+                              <TextField fx:id="input_nom" prefHeight="45.0" promptText="Nom de famille" style="-fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="8.0">
+                           <children>
+                              <Label text="Prénom" textFill="#64748B">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="input_prenom" prefHeight="45.0" promptText="Prénom" style="-fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="8.0">
+                           <children>
+                              <Label text="Âge" textFill="#64748B">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="input_age" prefHeight="45.0" promptText="Âge" style="-fx-font-size: 14px;" />
                            </children>
                         </VBox>
                      </children>
-                  </AnchorPane>
+                  </VBox>
+                  
+                  <!-- Action Buttons -->
+                  <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #E2E8F0; -fx-text-fill: #64748B; -fx-background-radius: 10px; -fx-font-weight: bold; -fx-font-size: 14px;" text="Annuler">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/cancel.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="modifier_lecteur" mnemonicParsing="false" onMouseClicked="#modifierLecteur" prefHeight="45.0" prefWidth="180.0" styleClass="btn-primary" text="Enregistrer">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
                </children>
-            </AnchorPane>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
          </children>
       </AnchorPane>
    </children>

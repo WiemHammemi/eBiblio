@@ -22,7 +22,7 @@
             <!-- Logo Container -->
             <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="240.0" styleClass="library-logo-container">
                <children>
-                  <Label styleClass="library-logo-text" text="YourLibrary" textAlignment="CENTER">
+                  <Label styleClass="library-logo-text" text="eBiblio" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>
