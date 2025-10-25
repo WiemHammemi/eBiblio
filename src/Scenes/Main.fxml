@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="420.0" prefWidth="712.0" styleClass="parentMain" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="20.0" layoutY="25.0" prefHeight="200.0" prefWidth="614.0" styleClass="paneMain" stylesheets="@../CSS/application.css" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <Label layoutX="474.0" layoutY="109.0" styleClass="main-label" text="etes-vous inscrit" />
+            <Button layoutX="71.0" layoutY="176.0" mnemonicParsing="false" styleClass="main-btn" text="S'inscrire" />
+            <Button layoutX="480.0" layoutY="176.0" mnemonicParsing="false" styleClass="main-btn" text="Se connecter" />
+            <Label layoutX="35.0" layoutY="109.0" styleClass="main-label" text="Vous n'etes pas inscrit" />
+            <VBox layoutX="21.0" layoutY="-24.0" prefHeight="398.0" prefWidth="333.0" styleClass="box-form" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #F8FAFC;" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashboardController">
+   <children>
+      <!-- SIDEBAR -->
+      <AnchorPane prefHeight="720.0" prefWidth="280.0" styleClass="sidebar-nav">
+         <children>
+            <!-- Logo Container -->
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="240.0" styleClass="library-logo-container">
+               <children>
+                  <Label styleClass="library-logo-text" text="eBiblio" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#64748B" text="Gestion de bibliothèque" />
+               </children>
+            </VBox>
+            
+            <!-- Navigation Menu -->
+            <VBox layoutX="20.0" layoutY="130.0" prefWidth="240.0" spacing="10.0">
+               <children>
+                  <!-- Accueil Button (Active) -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button, nav-button-active">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/accueil.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_accueil" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Accueil" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Livres Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/book.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_livres" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Livres" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Lecteurs Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/lecteur.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_lecteurs" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Lecteurs" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Emprunts Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/emprunt.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_emprunts" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Emprunts" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Footer Info -->
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="630.0" prefWidth="240.0" spacing="5.0">
+               <children>
+                  <Text fill="rgba(255,255,255,0.6)" text="Version 1.0.0" />
+                  <Text fill="rgba(255,255,255,0.6)" text="© 2024 eBiblio" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      
+      <!-- MAIN CONTENT AREA -->
+      <AnchorPane layoutX="280.0" prefHeight="720.0" prefWidth="920.0">
+         <children>
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="30.0" prefHeight="80.0" prefWidth="860.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fill="#1E293B" text="Tableau de bord">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#64748B" text="Vue d'ensemble de votre bibliothèque">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <!-- Statistics Cards -->
+            <HBox layoutX="30.0" layoutY="130.0" prefWidth="860.0" spacing="20.0">
+               <children>
+                  <!-- Card 1: Total Livres -->
+                  <VBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="270.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <Rectangle arcHeight="15.0" arcWidth="15.0" fill="linear-gradient(to bottom right, #667eea, #764ba2)" height="60.0" width="60.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-75.0">
+                                 <image>
+                                    <Image url="@../images/book.PNG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Text fill="#64748B" text="Total des livres">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="totalLivresText" fill="#1E293B" text="0">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="variationLivresText" fill="#10B981" text="↑ 0% ce mois">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  
+                  <!-- Card 2: Lecteurs Actifs -->
+                  <VBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="270.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <Rectangle arcHeight="15.0" arcWidth="15.0" fill="linear-gradient(to bottom right, #10B981, #059669)" height="60.0" width="60.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-75.0">
+                                 <image>
+                                    <Image url="@../images/lecteur.PNG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Text fill="#64748B" text="Lecteurs actifs">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="lecteursActifsText" fill="#1E293B" text="0">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="variationLecteursText" fill="#10B981" text="↑ 0% ce mois">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  
+                  <!-- Card 3: Emprunts en cours -->
+                  <VBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="270.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <Rectangle arcHeight="15.0" arcWidth="15.0" fill="linear-gradient(to bottom right, #93C5FD, #60A5FA)" height="60.0" width="60.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-75.0">
+                                 <image>
+                                    <Image url="@../images/emprunt.PNG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Text fill="#64748B" text="Emprunts en cours">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="empruntsEnCoursText" fill="#1E293B" text="0">
+                           <font>
+                              <Font name="System Bold" size="34.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="variationEmpruntsText" fill="#EF4444" text="↓ 0% ce mois">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            
+            <!-- Graphiques et Statistiques Visuelles -->
+            <HBox layoutX="30.0" layoutY="400.0" prefWidth="860.0" spacing="20.0">
+               <children>
+                  <!-- Graphique Circulaire - Disponibilité des Livres -->
+                  <VBox alignment="TOP_CENTER" prefHeight="180.0" prefWidth="270.0" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fill="#1E293B" text="Disponibilité">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        
+                        <!-- Diagramme circulaire avec SVG -->
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <!-- Cercle de fond -->
+                              <javafx.scene.shape.Circle fill="#E2E8F0" radius="45.0" stroke="transparent" strokeWidth="0" />
+                              
+                              <!-- Arc pour livres disponibles (75%) -->
+                              <javafx.scene.shape.Arc fill="#10B981" length="270.0" radiusX="45.0" radiusY="45.0" startAngle="90.0" stroke="transparent" strokeWidth="0" type="ROUND" translateX="-90.0" />
+                              
+                              <!-- Cercle intérieur blanc -->
+                              <javafx.scene.shape.Circle fill="white" radius="30.0" stroke="transparent" strokeWidth="0" translateX="-90.0" />
+                              
+                              <!-- Texte au centre -->
+                              <VBox alignment="CENTER" translateX="-90.0">
+                                 <children>
+                                    <Text fill="#10B981" text="75%">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#64748B" text="Disponibles">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <!-- Légende -->
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <javafx.scene.shape.Circle fill="#10B981" radius="5.0" />
+                                    <Text fill="#64748B" text="Disponibles">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <javafx.scene.shape.Circle fill="#E2E8F0" radius="5.0" />
+                                    <Text fill="#64748B" text="Empruntés">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+                  
+                  <!-- Graphique en Barres - Activité Mensuelle -->
+                  <VBox alignment="TOP_CENTER" prefHeight="180.0" prefWidth="270.0" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fill="#1E293B" text="Activité du Mois">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        
+                        <!-- Mini graphique en barres -->
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" spacing="8.0">
+                           <children>
+                              <!-- Semaine 1 -->
+                              <VBox alignment="BOTTOM_CENTER" spacing="3.0">
+                                 <children>
+                                    <Text fill="#64748B" text="12">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                    <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to top, #667eea, #764ba2)" height="60.0" width="35.0" />
+                                    <Text fill="#64748B" text="S1">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              
+                              <!-- Semaine 2 -->
+                              <VBox alignment="BOTTOM_CENTER" spacing="3.0">
+                                 <children>
+                                    <Text fill="#64748B" text="18">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                    <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to top, #667eea, #764ba2)" height="85.0" width="35.0" />
+                                    <Text fill="#64748B" text="S2">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              
+                              <!-- Semaine 3 -->
+                              <VBox alignment="BOTTOM_CENTER" spacing="3.0">
+                                 <children>
+                                    <Text fill="#64748B" text="15">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                    <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to top, #667eea, #764ba2)" height="72.0" width="35.0" />
+                                    <Text fill="#64748B" text="S3">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              
+                              <!-- Semaine 4 -->
+                              <VBox alignment="BOTTOM_CENTER" spacing="3.0">
+                                 <children>
+                                    <Text fill="#64748B" text="22">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                    <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to top, #10B981, #059669)" height="95.0" width="35.0" />
+                                    <Text fill="#64748B" text="S4">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <Text fill="#64748B" text="Emprunts par semaine">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+                  
+                  <!-- Indicateurs de Performance -->
+                  <VBox alignment="TOP_CENTER" prefHeight="180.0" prefWidth="270.0" spacing="15.0" styleClass="card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fill="#1E293B" text="Performance">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        
+                        <!-- Indicateur 1: Taux de retour -->
+                        <VBox spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Text fill="#64748B" text="Taux de retour" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#10B981" text="95%">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="#E2E8F0" height="8.0" width="230.0" />
+                              <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to right, #10B981, #059669)" height="8.0" translateY="-8.0" width="218.0" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Indicateur 2: Satisfaction -->
+                        <VBox spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Text fill="#64748B" text="Satisfaction" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#3B82F6" text="88%">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="#E2E8F0" height="8.0" width="230.0" />
+                              <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to right, #3B82F6, #2563EB)" height="8.0" translateY="-8.0" width="202.0" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Indicateur 3: Rotation -->
+                        <VBox spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Text fill="#64748B" text="Rotation livres" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#F59E0B" text="72%">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="#E2E8F0" height="8.0" width="230.0" />
+                              <javafx.scene.shape.Rectangle arcHeight="5.0" arcWidth="5.0" fill="linear-gradient(to right, #F59E0B, #D97706)" height="8.0" translateY="-8.0" width="165.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

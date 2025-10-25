@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #F8FAFC;" stylesheets="@../CSS/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LecteurController">
+   <children>
+      <!-- SIDEBAR -->
+      <AnchorPane prefHeight="720.0" prefWidth="280.0" styleClass="sidebar-nav">
+         <children>
+            <!-- Logo Container -->
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="240.0" styleClass="library-logo-container">
+               <children>
+                  <Label styleClass="library-logo-text" text="YourLibrary" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#64748B" text="Gestion de bibliothèque" />
+               </children>
+            </VBox>
+            
+            <!-- Navigation Menu -->
+                       <VBox layoutX="20.0" layoutY="130.0" prefWidth="240.0" spacing="10.0">
+               <children>
+                  <!-- Accueil Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/accueil.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_accueil" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Accueil" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Livres Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/book.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_livres" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Livres" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Lecteurs Button -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button, nav-button-active">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/lecteur.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_lecteurs" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px;" text="Lecteurs" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  
+                  <!-- Emprunts Button (Active) -->
+                  <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="nav-button">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/emprunt.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_emprunts" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Emprunts" />
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Footer Info -->
+            <VBox alignment="CENTER" layoutX="20.0" layoutY="630.0" prefWidth="240.0" spacing="5.0">
+               <children>
+                  <Text fill="rgba(255,255,255,0.6)" text="Version 1.0.0" />
+                  <Text fill="rgba(255,255,255,0.6)" text="© 2024 YourLibrary" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      
+      <!-- MAIN CONTENT AREA -->
+      <AnchorPane layoutX="280.0" prefHeight="720.0" prefWidth="920.0">
+         <children>
+            <!-- Header with Search -->
+            <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="30.0" prefHeight="70.0" prefWidth="860.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fill="#1E293B" text="Gestion des Lecteurs">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#64748B" text="Gérez les membres de votre bibliothèque">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  
+                  <!-- Search Bar -->
+                  <HBox alignment="CENTER_LEFT" prefWidth="350.0">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="35.0" translateZ="1.0">
+                           <image>
+                              <Image url="@../images/Capture%20d'écran%202024-01-17%20001656.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="input_recherche" onKeyReleased="#rechercherLecteur" prefHeight="45.0" prefWidth="350.0" promptText="Rechercher un lecteur..." styleClass="search-field" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            
+            <!-- Table Container -->
+            <VBox layoutX="30.0" layoutY="120.0" prefHeight="400.0" prefWidth="860.0" spacing="15.0" styleClass="card">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fill="#1E293B" text="Liste des lecteurs">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  
+                  <TableView fx:id="tab_lecteur" prefHeight="350.0" prefWidth="820.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="colonne_cin" prefWidth="120.0" text="CIN" />
+                        <TableColumn fx:id="colonne_nom" prefWidth="200.0" text="Nom" />
+                        <TableColumn fx:id="colonne_prenom" prefWidth="200.0" text="Prénom" />
+                        <TableColumn fx:id="colonne_age" prefWidth="100.0" text="Âge" />
+                        <TableColumn fx:id="colonne_action" prefWidth="200.0" text="Actions" />
+                     </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            
+            <!-- Add Lecteur Form -->
+            <VBox layoutX="30.0" layoutY="540.0" prefWidth="860.0" spacing="15.0" styleClass="form-container">
+               <children>
+                  <Text fill="#1E293B" text="Ajouter un nouveau lecteur">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  
+                  <HBox spacing="15.0">
+                     <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="CIN" textFill="#64748B">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="input_cin" promptText="Numéro CIN" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Nom" textFill="#64748B">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="input_nom" promptText="Nom de famille" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Prénom" textFill="#64748B">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="input_prenom" promptText="Prénom" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="5.0" prefWidth="150.0">
+                           <children>
+                              <Label text="Âge" textFill="#64748B">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="input_age" promptText="Âge" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #E2E8F0; -fx-text-fill: #64748B; -fx-background-radius: 10px; -fx-padding: 10px 25px; -fx-font-weight: bold;" text="Annuler" />
+                        <Button fx:id="ajouter_lecteur" mnemonicParsing="false" onMouseClicked="#ajouterLecteur" styleClass="btn-success" text="+ Ajouter" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierLivreController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="620.0" prefWidth="962.0">
+         <children>
+            <AnchorPane layoutX="10.0" prefHeight="620.0" prefWidth="953.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane layoutX="-21.0" layoutY="-14.0" prefHeight="639.0" prefWidth="242.0" style="-fx-background-color: #05187B;">
+                     <children>
+                        <TextArea layoutX="16.0" layoutY="14.0" prefHeight="72.0" prefWidth="215.0" style="-fx-background-color: white;" styleClass="text-align : center" text="YourLibrary" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextArea>
+                        <Label contentDisplay="CENTER" layoutX="29.0" layoutY="23.0" prefHeight="55.0" prefWidth="202.0" style="-fx-background-color: white; -fx-border-radius: 5px;" text="YourLibrary" textAlignment="CENTER" textFill="#1000bf">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <ButtonBar layoutX="76.0" layoutY="124.0" prefHeight="56.0" prefWidth="125.0" style="-fx-background-color: none;">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <buttons>
+                              <Button fx:id="page_accueil" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="56.0" prefWidth="118.0" style="-fx-background-color: none;" text="Accueil" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                           </buttons>
+                        </ButtonBar>
+                        <ButtonBar layoutX="78.0" layoutY="180.0" prefHeight="56.0" prefWidth="125.0">
+                           <buttons>
+                              <Button fx:id="page_livres" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="56.0" prefWidth="125.0" style="-fx-background-color: none;" text="Livres" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Button>
+                           </buttons>
+                        </ButtonBar>
+                        <ButtonBar layoutX="78.0" layoutY="256.0" prefHeight="51.0" prefWidth="125.0">
+                           <buttons>
+                              <Button fx:id="page_lecteurs" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="57.0" prefWidth="136.0" style="-fx-background-color: none;" text="Lecteurs" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Button>
+                           </buttons>
+                        </ButtonBar>
+                        <ButtonBar layoutX="93.0" layoutY="367.0" prefHeight="40.0" prefWidth="125.0" />
+                        <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="23.0" layoutY="191.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/book.PNG" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="23.0" layoutY="257.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/lecteur.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="page_emprunts" contentDisplay="CENTER" layoutX="85.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#handleMenuButtonAction" prefHeight="56.0" prefWidth="142.0" style="-fx-background-color: none;" text="Emprunts" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="23.0" layoutY="332.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/categorie.PNG" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="47.0" layoutX="26.0" layoutY="135.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Capture%20d'écran%202024-01-16%20225352.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="#12059e" layoutX="232.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier livre" textAlignment="CENTER" wrappingWidth="303.00000017881393">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Text>
+                  <VBox alignment="CENTER_RIGHT" layoutX="241.0" layoutY="148.0" prefHeight="284.0" prefWidth="631.0" style="-fx-background-color: #CBD6E2; -fx-border-radius: 10px;">
+                     <children>
+                        <TextField fx:id="input_titre" promptText="Titre">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="input_auteur" promptText="Auteur">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="input_isbn" promptText="Code ISBN">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="modifier_livre" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#modifierLivre" prefHeight="42.0" prefWidth="115.0" style="-fx-background-color: #05187B;" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

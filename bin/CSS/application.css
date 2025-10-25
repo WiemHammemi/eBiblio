@@ -1,0 +1,463 @@
+/* ============================================
+   VARIABLES GLOBALES ET POLICES
+   ============================================ */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-primary-color: #05187B;
+    -fx-primary-dark: #030F4D;
+    -fx-primary-light: #0A2FB5;
+    -fx-secondary-color: #3B82F6;
+    -fx-accent-color: #10B981;
+    -fx-background-light: #F8FAFC;
+    -fx-background-white: #FFFFFF;
+    -fx-text-dark: #1E293B;
+    -fx-text-light: #64748B;
+    -fx-border-color: #E2E8F0;
+    -fx-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   PAGE DE BIENVENUE - WELCOME PAGE
+   ============================================ */
+.welcomePage {
+    -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.welcomeBox {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 20px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 20px;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 20, 0, 0, 5);
+    -fx-padding: 40px;
+}
+
+.welcomeTitle {
+    -fx-text-fill: #2D3748;
+    -fx-font-weight: bold;
+    -fx-font-size: 36px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1);
+}
+
+.welcomeBox Text {
+    -fx-text-fill: #4A5568;
+    -fx-font-size: 15px;
+    -fx-line-spacing: 5px;
+}
+
+.welcomeLogo {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+/* ============================================
+   PAGE PRINCIPALE - MAIN PAGE
+   ============================================ */
+.parentMain {
+    -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.paneMain {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 25, 0, 0, 5);
+}
+
+.main-btn {
+    -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -fx-background-radius: 12px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 12px;
+    -fx-padding: 12px 35px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.4), 10, 0, 0, 3);
+}
+
+.main-btn:hover {
+    -fx-background-color: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.6), 15, 0, 0, 5);
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+.main-btn:pressed {
+    -fx-scale-y: 0.98;
+    -fx-scale-x: 0.98;
+}
+
+.main-label {
+    -fx-font-size: 22px;
+    -fx-text-fill: #2D3748;
+    -fx-font-weight: 600;
+}
+
+.box-form {
+    /*-fx-background-image: url("/images/bck.jpg");*/
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-color: white;
+    -fx-background-radius: 15px 0 0 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, -3, 0);
+}
+
+.btn-signIn {
+    -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 10px 25px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.3), 8, 0, 0, 2);
+}
+
+.btn-signIn:hover {
+    -fx-background-color: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.5), 12, 0, 0, 4);
+}
+
+.btn-forgot-password {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #667eea;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-underline: false;
+}
+
+.btn-forgot-password:hover {
+    -fx-text-fill: #764ba2;
+    -fx-underline: true;
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION
+   ============================================ */
+.sidebar-nav {
+    -fx-background-color: linear-gradient(180deg, #05187B 0%, #030F4D 100%);
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px 20px;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+}
+
+.nav-button Button {
+    -fx-text-fill: #7885de !important;  /* Bleu très clair, presque blanc */
+    -fx-font-weight: 600 !important;     /* Plus gras par défaut */
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);  /* Plus opaque */
+}
+
+.nav-button:hover Button {
+    -fx-text-fill: black !important;
+}
+
+.nav-button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-button-active {
+    -fx-background-color: rgba(59, 130, 246, 0.25);  /* Fond bleu clair */
+    -fx-border-radius: 10px 0 0 10px;                 /* Bordures arrondies */
+}
+
+.nav-button-active Button {
+    -fx-text-fill: white !important;
+    -fx-font-weight: bold !important;
+}
+
+/* ============================================
+   TABLEAUX - TABLES
+   ============================================ */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 0, 2);
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+    -fx-text-fill: #1E293B;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 12px;
+    -fx-border-color: #E2E8F0;
+}
+
+.table-view .column-header:hover {
+    -fx-background-color: #E2E8F0;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #334155;
+    -fx-padding: 10px;
+    -fx-font-size: 13px;
+    -fx-border-color: #F1F5F9;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #F8FAFC;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #EEF2FF;
+    -fx-text-fill: #1E293B;
+}
+
+/* ============================================
+   FORMULAIRES - FORMS
+   ============================================ */
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-padding: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 15, 0, 0, 3);
+}
+
+.text-field {
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 8px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 15px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1E293B;
+}
+
+.text-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: #667eea;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.2), 8, 0, 0, 0);
+}
+
+.text-field:hover {
+    -fx-border-color: #CBD5E1;
+}
+
+/* ============================================
+   BOUTONS - BUTTONS
+   ============================================ */
+.btn-primary {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #3B82F6, #2563EB);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 30px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.3), 10, 0, 0, 3);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.5), 15, 0, 0, 5);
+    -fx-scale-y: 1.03;
+    -fx-scale-x: 1.03;
+}
+
+.btn-primary:pressed {
+    -fx-scale-y: 0.98;
+    -fx-scale-x: 0.98;
+}
+
+.btn-success {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #3B82F6, #2563EB);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 25px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.3), 8, 0, 0, 2);
+}
+
+.btn-success:hover {
+    -fx-background-color: linear-gradient(135deg, #059669 0%, #047857 100%);
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 12, 0, 0, 4);
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 25px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.3), 8, 0, 0, 2);
+}
+
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.5), 12, 0, 0, 4);
+}
+
+.btn-edit {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #3B82F6, #2563EB);
+    -fx-background-radius: 8px;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+}
+
+.btn-edit:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #2563EB, #1D4ED8);
+}
+
+
+/* ============================================
+   TITRES ET TEXTES
+   ============================================ */
+.page-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1);
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1E293B;
+}
+
+/* ============================================
+   LOGO BIBLIOTHÈQUE
+   ============================================ */
+.library-logo-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+}
+
+.library-logo-text {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #05187B;
+}
+
+/* ============================================
+   EFFETS DE HOVER POUR ICÔNES
+   ============================================ */
+.icon-button {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.icon-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.4), 10, 0, 0, 3);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* ============================================
+   BARRE DE RECHERCHE
+   ============================================ */
+.search-field {
+    -fx-background-color: white;
+    -fx-background-radius: 25px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2px;
+    -fx-padding: 12px 20px 12px 45px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #94A3B8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 8, 0, 0, 2);
+}
+
+.search-field:focused {
+    -fx-border-color: #667eea;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.2), 12, 0, 0, 3);
+}
+
+/* ============================================
+   BADGES ET STATUTS
+   ============================================ */
+.badge-available {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #065F46;
+    -fx-background-radius: 12px;
+    -fx-padding: 4px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.badge-borrowed {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #991B1B;
+    -fx-background-radius: 12px;
+    -fx-padding: 4px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* ============================================
+   ANIMATIONS ET TRANSITIONS
+   ============================================ */
+.animated {
+    -fx-transition: all 0.3s ease;
+}
+
+/* ============================================
+   SCROLLBAR PERSONNALISÉE
+   ============================================ */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #CBD5E1;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #94A3B8;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 5px;
+}
+
+/* ============================================
+   CARTES - CARDS
+   ============================================ */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 15, 0, 0, 3);
+}
+
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 20, 0, 0, 5);
+    -fx-translate-y: -2px;
+}
